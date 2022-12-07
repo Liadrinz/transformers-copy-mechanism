@@ -284,7 +284,7 @@ class BartForConditionalGenerationWithCopyMech(BartForConditionalGeneration, Gen
             logits = lm_logits
         else:
             embeds = outputs.decoder_hidden_states[0]
-            attentions = outputs.cross_attentions[-1].sum(dim=1)
+            attentions = outputs.cross_attentions[-1].mean(dim=1)
             if labels is not None:
                 # Training
                 context_vectors = attentions @ hidden_states

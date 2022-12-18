@@ -16,7 +16,9 @@
 |bart|34.88|14.34|25.17|
 |bart-copy|35.11|14.58|25.78|
 
-![ROUGE-Epoch Figure](figures/bart-vs-bart-copy.svg)
+从下面的ROUGE分数图像可以看出, 在前10个epochs中，`bart`相比`bart-copy`收敛到了更低的上界：
+
+![ROUGE-Epoch Figure](figures/bart-vs-bart-copy.png)
 
 ## 使用方法
 

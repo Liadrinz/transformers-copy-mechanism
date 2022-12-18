@@ -16,7 +16,9 @@ For summarization task, the code is experimented on a [subset of CNN/DailyMail d
 |bart|34.88|14.34|25.17|
 |bart-copy|35.11|14.58|25.78|
 
-![](figures/bart-vs-bart-copy.svg)
+From the following ROUGE score figure, we can see that `bart` converges to a lower bound of ROUGE score compared to `bart-copy` within the first 10 training epochs:
+
+![ROUGE-Epoch Figure](figures/bart-vs-bart-copy.png)
 
 ## Usage
 

@@ -4,7 +4,7 @@
 
 ## 介绍
 
-1. 改代码覆写了huggingface的BART和GPT2模型，加入了拷贝机制，兼容huggingface的训练和解码流程
+1. 改代码覆写了huggingface的BART(BartForConditionalGeneration)和GPT2(GPT2LMHeadModel)模型，加入了拷贝机制，兼容huggingface的训练和解码流程
 2. 暂不支持 Out-Of-Vocabulary (OOV) 词汇
 
 ## 结果
@@ -16,7 +16,7 @@
 |bart|34.88|14.34|25.17|
 |bart-copy|35.11|14.58|25.78|
 
-![](figures/bart-vs-bart-copy.svg)
+![ROUGE-Epoch Figure](figures/bart-vs-bart-copy.svg)
 
 ## 使用方法
 

@@ -1,0 +1,4 @@
+transformers==4.24.0
+torch==1.7.1
+py-rouge==1.1
+tqdm

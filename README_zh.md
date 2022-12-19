@@ -24,6 +24,12 @@
 
 另可详见`train_summary.sh`和`decode_summary.sh`
 
+### 安装
+
+```sh
+pip install -r requirements.txt
+```
+
 ### 训练
 
 ```sh

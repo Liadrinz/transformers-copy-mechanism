@@ -24,6 +24,12 @@ From the following ROUGE score figure, we can see that `bart` converges to a low
 
 See also `train_summary.sh` and `decode_summary.sh`
 
+### Installation
+
+```sh
+pip install -r requirements.txt
+```
+
 ### Train
 
 ```sh

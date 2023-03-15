@@ -35,7 +35,7 @@ pip install -r requirements.txt
 ```sh
 python3 -m torch.distributed.launch --nproc_per_node 4 run_summary.py train \
     --model_type bart-copy \
-    --model_name_or_path fnlp/bart-base \
+    --model_name_or_path fnlp/bart-base-chinese \
     --batch_size 16 \
     --src_file cnndm-10k/training.article.10k \
     --tgt_file cnndm-10k/training.summary.10k \
@@ -59,7 +59,7 @@ Options:
 ```sh
 python3 -u run_summary.py decode \
     --model_type bart-copy \
-    --model_name_or_path fnlp/bart-base \
+    --model_name_or_path fnlp/bart-base-chinese \
     --model_recover_path ./output_dir/checkpoint-xxx/pytorch_model.bin \
     --batch_size 16 \
     --src_file cnndm-10k/test.article.500 \
@@ -88,7 +88,7 @@ P.S. If the `model_recover_path` is `./output_dir/checkpoint-xxx/pytorch_model.b
 |Setting|Value|
 |:--|--:|
 |GPUs|4 TITAN XP 12GB|
-|Pretrained Model|[fnlp/bart-base](https://huggingface.co/fnlp/bart-base-chinese)|
+|Pretrained Model|[fnlp/bart-base-chinese](https://huggingface.co/fnlp/bart-base-chinese)|
 |Max Source Length|768|
 |Max Target Length|256|
 |Learning Rate|3e-5|

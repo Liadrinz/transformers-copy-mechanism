@@ -123,13 +123,10 @@ class GPT2LMHeadModelWithCopyMech(GPT2LMHeadModel):
         '''
         Keep only cross-attention scores, set self-attention scores to 0.0
         '''
-        batch_size = token_type_ids.size(0)
-        a = (token_type_ids == 1).any(dim=0).tolist().index(True)
-        b = (token_type_ids == 1).all(dim=0).tolist().index(True)
-        for i in range(batch_size):
-            first_tgt_idx = (token_type_ids[i] == 1).tolist().index(True)
-            attentions[:, a:, :b][i, :first_tgt_idx-a, b-first_tgt_idx:] = 0.0
-        attentions[:, :a, b:] = 0.0
+        is_src = (token_type_ids == self.config.src_type_id)
+        is_tgt = (token_type_ids == self.config.tgt_type_id)
+        is_cross_attention = is_tgt[:, :, None].float() @ is_src[:, None, :].float()
+        attentions[~is_cross_attention] = 0.0
         return attentions
     
     def forward(
